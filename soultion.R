@@ -22,3 +22,11 @@ hist(women_data$total_goals)
 
 shapiro.test(men_data$total_goals)
 shapiro.test(women_data$total_goals)
+
+# data is not normally distributed so we use wilcoxon test to run the hypothesis
+
+test_results <- wilcox.test(x = women_data$total_goals,
+                            y = men_data$total_goals,
+                            alternative = "greater")
+
+test_results
