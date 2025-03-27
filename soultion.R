@@ -16,3 +16,9 @@ women_data <- women_data %>%
   filter(tournament == "FIFA World Cup", date > "2002-01-01") %>% 
   mutate(total_goals = home_score + away_score)
 
+
+hist(men_data$total_goals)
+hist(women_data$total_goals)
+
+shapiro.test(men_data$total_goals)
+shapiro.test(women_data$total_goals)
