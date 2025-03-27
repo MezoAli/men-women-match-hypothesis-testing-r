@@ -29,4 +29,9 @@ test_results <- wilcox.test(x = women_data$total_goals,
                             y = men_data$total_goals,
                             alternative = "greater")
 
-test_results
+test_results$p.value
+
+p_val <- round(test_results$p.value, 4)
+result <- ifelse(p_val <= 0.10, "reject", "fail to reject")
+
+result_df <- data.frame(p_val,result)
